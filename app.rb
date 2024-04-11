@@ -17,7 +17,7 @@ get("/process_roll") do
 
   @sum = @rolls.sum
   @max = @num_dice * @num_sides
-  @ev = ((1 * @num_dice) + (@num_sides * @num_dice)) / 2
+  @ev = ((1 + @num_sides) * @num_dice)) / 2
 
   erb(:process_roll)
 end

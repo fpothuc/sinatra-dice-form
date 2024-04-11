@@ -20,7 +20,7 @@
         <li><%= a_roll %></li>
         <%end%>
       </ol>
-      <form action="/results">
+      <form action="/process_roll?dice=<%=@num_dice%>&sides=<%=@num_sides%>">
         <button>Roll again</button>
       </form>
       <div class="info">
