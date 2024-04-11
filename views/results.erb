@@ -11,6 +11,15 @@
     <div class="header">
       <h1>_d_</h1>
     </div>
+    <%if @num_dice.is_a?(Integer) && @num_sides.is_a?(Integer)%>
+      <ol>
+        <% @rolls.each do |a_roll| %>
+        <li><%= a_roll %></li>
+        <%end%>
+      </ol>
+    <%else%>
+      <p>Incorrect input. Please return home and try again.</p>
+    <%end%>
 
   </body>
 </html>
