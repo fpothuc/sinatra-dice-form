@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    <form action="/">
+      <button>Home</button>
+    </form>
+    <%if @num_dice != 0 && @num_sides != 0%>
+      <div class="header">
+        <h1><%=@num_dice%>d<%=@num_sides%></h1>
+      </div>
+      <div class="info">
+        <h3>Results</h3>
+      </div>
+      <ol>
+        <% @rolls.each do |a_roll| %>
+        <li><%= a_roll %></li>
+        <%end%>
+      </ol>
+      <form action="/results">
+        <button>Roll again</button>
+      </form>
+      <div class="info">
+        <h4>Sum: <%=@sum%></h4>
+        <h4>Maximum: <%=@max%></h4>
+        <h4>Expected Value: <%=@ev%></h4>
+      </div>
+    <%else%>
+      <div class="header">
+        <h1>Incorrect input</h1>
+      </div>
+      <p>Please return home and try again.</p>
+    <%end%>
+
+  </body>
+</html>

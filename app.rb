@@ -5,7 +5,7 @@ get("/") do
   erb(:home)
 end
 
-get("/results") do
+get("/process_roll") do
   @num_dice = params.fetch("dice").to_i
   @num_sides = params.fetch("sides").to_i
 
@@ -15,5 +15,9 @@ get("/results") do
     @rolls.push(rand(1..@num_sides))
   end
 
-  erb(:results)
+  @sum = @rolls.sum
+  @max = @num_dice * @num_sides
+  @ev = ((1 * @num_dice) + (@num_sides * @num_dice)) / 2
+
+  erb(:process_roll)
 end
